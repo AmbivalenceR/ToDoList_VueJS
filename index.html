@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ToDoList de Ambre</title>
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
+    <!--FONT AWESOME-->
+    <script
+      src="https://kit.fontawesome.com/7cdacc82b4.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- VueJS -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- JS & VUE -->
+    <script src="./js/script.js" defer></script>
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  </head>
+  <body>
+    <div id="root">
+      <header>
+        <div class="divTitlePage">
+          <h1>To Do List</h1>
+        </div>
+
+        <nav>
+          <button @click="changeButtonValue" value="faire">
+            À faire ({{faire.length}})
+          </button>
+          <button @click="changeButtonValue" value="cours">
+            En cours ({{cours.length}})
+          </button>
+          <button @click="changeButtonValue" value="termine">
+            Terminée ({{termine.length}})
+          </button>
+        </nav>
+      </header>
+      <main>
+        <div class="showFaire" v-show="button == 'faire'">
+          <div class="addTask">
+            <input
+              style="font-family: 'Dancing Script', cursive; font-size: 1.15em"
+              type="text"
+              placeholder="Ajouter une tâche"
+              @input="editTask"
+              @keyup.enter="addNewTask"
+              :value="task"
+            />
+            <button @click="addNewTask" class="addBtn">Ajouter</button>
+          </div>
+
+          <p v-if="faire.length < 1" class="message">
+            Vous n'avez aucune tâche à faire.
+          </p>
+
+          <div class="list">
+            <ul>
+              <li
+                v-for="(task, index) in faire"
+                class="blockTask"
+                :value="taskStatut"
+              >
+                {{task}}
+                <span>
+                  <button
+                    type="checkbox"
+                    class="faire"
+                    name="statut"
+                    value="cours"
+                    @click="addStatutCours"
+                    :data-index="index"
+                  >
+                    En cours
+                  </button>
+                  <button
+                    :data-index="index"
+                    value="faire"
+                    @click="deleteTaskFaire"
+                  >
+                    x
+                  </button>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="showFaire" v-show="button == 'cours'">
+          <p v-if="cours.length < 1" class="message">
+            Vous n'avez aucune tâche en cours.
+          </p>
+          <div class="list">
+            <ul>
+              <li
+                v-for="(task, index) in cours"
+                class="blockTask"
+                :value="taskStatut"
+              >
+                {{task}}
+                <span>
+                  <button
+                    type="checkbox"
+                    class="cours"
+                    name="statut"
+                    value="termine"
+                    @click="addStatutTermine"
+                    :data-index="index"
+                  >
+                    Terminé
+                  </button>
+                  <button
+                    :data-index="index"
+                    value="cours"
+                    @click="deleteTaskCours"
+                  >
+                    x
+                  </button>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="showFaire" v-show="button == 'termine'">
+          <p v-if="termine.length < 1" class="message">
+            Vous n'avez aucune tâche terminée.
+          </p>
+          <div class="list">
+            <ul>
+              <li
+                v-for="(task, index) in termine"
+                class="blockTask"
+                :value="taskStatut"
+              >
+                {{task}}
+                <span>
+                  <button
+                    :data-index="index"
+                    value="termine"
+                    @click="deleteTaskTermine"
+                  >
+                    x
+                  </button>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </main>
+      <footer></footer>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

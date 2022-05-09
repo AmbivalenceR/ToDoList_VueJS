@@ -1,0 +1,374 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx FIN RESET xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx FIN RESET xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+/*xxxxxxxxxxxx GLOBAL xxxxxxxxxxxxxx */
+
+body {
+  font-family: "Dancing Script", cursive;
+  background-image: url(../img/BG2.jpg);
+}
+
+/*xxxxxxxxxxxx GLOBAL xxxxxxxxxxxxxx */
+
+/*xxxxxxxxxxxx HEADER xxxxxxxxxxxxxx*/
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.divTitlePage {
+  width: 100%;
+  text-align: center;
+  padding: 2%;
+  background-color: #e5bcb0;
+  border: 1px solid #843925;
+}
+
+h1 {
+  font-family: "DM Serif Display", serif;
+  font-size: 2.5em;
+  color: #843925;
+  text-shadow: -2px 2px 2px white;
+}
+
+nav {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 90px;
+}
+
+nav button {
+  text-decoration: none;
+  color: #843925;
+  font-size: 1.3em;
+  padding: 3%;
+  margin: 0 2%;
+  background-color: rgb(255 247 244);
+  border: 1px solid #843925;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+}
+
+nav button:hover {
+  padding-bottom: 4%;
+}
+
+/*xxxxxxxxxxxx HEADER xxxxxxxxxxxxxx*/
+
+/*xxxxxxxxxxxx MAIN xxxxxxxxxxxxxxxx*/
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 6% 5%;
+}
+
+.showFaire {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.list {
+  width: 60%;
+  margin-top: 7%;
+}
+
+.checkAndText {
+  display: flex;
+  padding: 14px 0;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.check {
+  border: 1px solid black;
+  width: 22px;
+  margin-right: 20px;
+  height: 22px;
+}
+
+/* .input {
+  display: none;
+} */
+
+.bar {
+  display: none;
+  width: 70%;
+  border-bottom: 1px solid black;
+  z-index: 100;
+  position: relative;
+  top: 32px;
+  left: 20px;
+}
+
+.addTask {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 1% 2%;
+  width: 100%;
+  font-size: 1.3em !important;
+  background-color: white;
+  border: 1px solid #843925 !important;
+  color: black;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+}
+
+input:focus {
+  outline: none !important;
+  border: 2px solid #843925;
+  font-family: "Dancing Script", cursive;
+}
+
+/* input:checked + label {
+  text-decoration: line-through;
+} */
+
+input:checked {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  background-color: #e8bdb1;
+}
+
+input::placeholder {
+  font-style: italic;
+  color: rgb(161, 161, 161);
+  font-family: "Dancing Script", cursive;
+  padding: 1%;
+}
+
+.text {
+  width: -webkit-fill-available;
+  font-size: 1.5em;
+}
+
+.text p {
+  font-style: italic;
+  color: gray;
+  font-family: "Dancing Script", cursive;
+  padding: 1%;
+}
+
+button {
+  font-family: "DM Serif Display";
+  background-color: white;
+  border: 1px solid #843925;
+  color: #843925;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #f9e3dd;
+}
+.addBtn {
+  padding: 1% 2%;
+  font-size: 1.2em;
+  margin: 6% auto;
+  width: 40%;
+  background-color: rgb(255 247 244);
+  color: #843925;
+}
+
+.spanCkeckBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.7em;
+  gap: 8px;
+}
+
+.blockTask {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5em;
+  gap: 40px;
+  border-bottom: 1px solid #843925;
+  padding: 2%;
+  color: #843925;
+  /* background-color: #ffede8; */
+}
+
+ul li:nth-child(odd) {
+  background-color: rgb(255 247 244);
+}
+
+ul li:nth-child(even) {
+  background-color: #f9e3dd;
+}
+
+li span {
+  width: 17%;
+  display: flex;
+  justify-content: end;
+  gap: 15px;
+}
+
+li button {
+  padding: 2% 7%;
+  font-size: 0.7em;
+}
+
+.message {
+  padding: 8%;
+  font-size: 1.5em;
+  color: #843925;
+}
+/*xxxxxxxxxxx MAIN xxxxxxxxxxxxxxxxx*/
+
+/*xxxxxxxxxxx FOOTER xxxxxxxxxxxxxxx*/
+
+/*xxxxxxxxxxx FOOTER xxxxxxxxxxxxxxx*/
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx FIN CSS xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx FIN CSS xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
